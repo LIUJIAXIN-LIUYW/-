@@ -1,3 +1,49 @@
+小程序公共设置
+{"pages":[
+"page/index/index"
+},
+"window":{
+"navigationBackgroundColor":
+"#000",
+"backgroundColor":"#000",
+"navigattionBarBackgroundColor":
+"#000"
+},
+"networkTimeout":{
+"request":10000,
+"connectSocket":10000,
+"uploadFile":10000,
+"downloadFile":10000
+},
+"debug":true
+
+}
+计算器页面结构
+页面结构分为2个主要部分：显示区和键盘区
+其中键盘区又分为功能键、数字键，及运算键，页面结构如下
+<view class="calculator">
+<view class="calculator-display">
+<view class="calculator-display-text">
+{{displayValue}}</view>
+</view>
+<view class="calulator-keypad">
+<view class="input-keys">
+<ciew class="function-keys"
+catchtap="on TapFunction">
+<template is="calculator-key"data="{{className:calculator-key"
+data="{{className:"key-percent',
+display:'%'}}"/>
+</view>
+/*sdf*/
+<view class="dight-keys"
+catchtap="on TapDight">
+<template is="calculator-key"
+data="{{className:'key-0',display:
+'0'}}"/>
+<template is="calculator-key"
+data="{{className:'key-dot',display:'。'}}"/>
+
+
 计算器样式表代码如下
 @import “reset.wxss";
 
