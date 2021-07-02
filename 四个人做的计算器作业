@@ -59,18 +59,7 @@ data="{{className:'key-dot',display:'。'}}"/>
 }"/>
 <template is="calculator-key"date="{
 {className:'key-6',display:'6'}
-}"/>
-<template is="calculator-key"date="{
-{className:'key-7',display:'7'}
-}"/>
-<template is="calculator-key"date="{
-{className:'key-8',display:'8'}
-}"/>
-<template is="calculator-key"date="{
-{className:'key-9',diaplay:'9'}
-}"/>
-</view>
-<view class="operator-keys"
+}"/>s"
 catchtap="onTapOperator">
 <template is="calculator-key"date="{
 {className:'key-divide',display:'/'}}"/>
@@ -244,3 +233,68 @@ this.clearDisplay();
 this.clearAll();
 }
 break;
+case 'key-sign'：
+var newValue =parseFloat(this.data.displayValue)*-1
+this.setData({
+displayValue:String(newValue)
+})
+break；
+case 'key-percent':
+const fixedDigits = this.data.displayValue.replace(/^?\d*\.?/,")
+var newValue = paraseFloat(this.data.displayValue)/100
+this.setData({
+displayValue:String(newValue.toFixedDigits.length + 2))
+});
+break;
+default:
+break;
+}
+},
+onTapOperator：function(envent){
+const nextOprator = event.target.dataset.key;
+const inPutValue = parseFloat(this.data.displayValue);
+if(this.data,value == null) {
+this.setData({
+value:inputValue
+});
+}else if (this.data.oprator) {
+const currentValue = this.data.value || 0;
+const newValue = this.calculatorOperations[this.data.oprator](currentValue,inputValue);
+this.setData({
+value:newValue,
+displayValue: String(newValue)
+});
+}
+this.setData({
+waitingForOperand:true,operator:nextOprator
+});
+},
+onTapDigit:function(event){
+const key = event.target.dataset.key;//根据data-key标记按键
+if(key == 'key-dot'){
+//按下点号
+if(!/\.\).test(this.data.displayValue)){
+this.setData({
+displayValue:this.data.displayValue + '.'
+waitingForOperand: false
+})
+}
+} else {
+//按下数字键
+const digit = key[key.length-1];
+if (this.data.waitingForOperand){
+this.setData({
+displayValue: String(digit),
+waitingForOperand: false
+})
+}else{
+this.setData({
+displayValue:this.data.displayValue === '0' ? String(digit):this.data.displayValue + digit
+})
+}
+}
+}
+})
+
+
+
