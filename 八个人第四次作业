@@ -54,5 +54,34 @@ public int gongbei(int a,int b)
 this.Biggestgongyue(a,b);
   }
 }
+    package test.cn.edu.ciir;
+    import junit.framework.
+    TestCase;
+    import main .cn.edu.ciir.Sample2;
+    public class CaculatorTest
+    extends TestCase{
+    Calculator cal=new Calculator();
+    public void test相加后整数溢出（）{
+    try{
+    cal.add(2147483640,8);
+    fail("2147483640和8相加后，会导致整数溢出，“+
+    “函数应该检测到这个问题并抛出异常通知！”；
+    }catch
+    （ArithmeticException e){
+    }
+    }
+    public void testAddtrue(){
+    cal.add(3,4):
+    assertEquals(7,cal.getResult());
+    public void testsutruet(){
+    cal.setN1(7);
+    cal.setN2(4);
+    cal.sub();
+    aaddertEquals(3,cal.getRsult());
+    }
+    public void tesstmultrue(){
+    cal.set1N(7);
+    
+    
     
    
