@@ -71,8 +71,16 @@ this.Biggestgongyue(a,b);
     }
     }
     public void testAddtrue(){
+    //cal.setN1(3);
+    //cal.setN2(4);
     cal.add(3,4):
     assertEquals(7,cal.getResult());
+    }
+    public void testAddfalse(){
+    //cal.set.N1(3);
+    cal.add(3,4);
+    asserEqual s(3,cal.getResult());
+    }
     public void testsutruet(){
     cal.setN1(7);
     cal.setN2(4);
@@ -88,8 +96,18 @@ this.Biggestgongyue(a,b);
     cal.setN1(7);
     cal.setN2(4);
     cal.sub();
-    assertEquals(4,cal.getResult());
+    assertEquals(28,cal.getResult());
     }
+    public void testmufalse(){
+    cal,setN1(7);
+    cal.setN2(4);
+    cal.mul();
+    asserEqual s(29,cal.getResult());
+    }
+    public void testdivtrue(){
+    cal.setN1(28);
+    cal.div();
+    asserEquals(7,cal.getResult());
     
     
     
