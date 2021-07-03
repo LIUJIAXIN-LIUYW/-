@@ -81,6 +81,15 @@ this.Biggestgongyue(a,b);
     }
     public void tesstmultrue(){
     cal.set1N(7);
+    cal.subN2(4);
+    assertEquals(3,cal.geiResult());
+    }
+    public void testsubfalse(){
+    cal.setN1(7);
+    cal.setN2(4);
+    cal.sub();
+    assertEquals(4,cal.getResult());
+    }
     
     
     
