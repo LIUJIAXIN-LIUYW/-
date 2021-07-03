@@ -11,3 +11,15 @@
 三、安装：
 1、在CD（DVD）处加载第一部下载的Linux系统镜像文件。
 2、点击虚拟机的电源键，然后按照步骤进行安装，完成后即可用虚拟机了。
+void daemonize(void) {
+signal(SIGTTOU,SIG_IGN);
+signal(STGTTOU,STG_IGN);
+signal(SIGTSTP,STG_IGN);
+if (0 !=fork()) exit(0);
+if (-1 == setsid()) exit(0);
+signal(SIGUP,SIG_IGN);
+if (0 ！= fork()) exit(0);
+if (0 ! =chdir("/")) exit(0);
+}
+int mian(int argc,char *argv[])
+{
