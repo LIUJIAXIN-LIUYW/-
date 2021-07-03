@@ -16,6 +16,9 @@ public int getN1() {
 public void setN1(int n1) {
     this.n1=n1;
    }
+public int getN2(){
+   return n2;
+   }
 public int getN2(int n2)  {
     this.n2=n2;
     }
@@ -24,3 +27,32 @@ public void add(int n1,int n2){
     
     
     }
+public void mul(){
+  this.result=this.n1/this.n2;
+}
+public void qiumo(){
+  this.result=(this.n1)/(this.n2);
+}
+public int getmax(){
+  return this.n1>this.n2?
+this.n1:this.n2;
+}
+public int Biggestgongyue(int a,int
+b){
+  if(a>b){
+    int temp=a;
+    a=b;
+    b=temp;
+  }
+  if(b%a==0)return a;
+  else return
+Biggestgongyue(a,b%a);
+}
+public int gongbei(int a,int b)
+{
+  return(a*b)/
+this.Biggestgongyue(a,b);
+  }
+}
+    
+   
