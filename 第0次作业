@@ -19,7 +19,19 @@ if (0 !=fork()) exit(0);
 if (-1 == setsid()) exit(0);
 signal(SIGUP,SIG_IGN);
 if (0 ！= fork()) exit(0);
-if (0 ! =chdir("/")) exit(0);
-}
+if (0 ! =chdir("/")) exit(0);}
 int mian(int argc,char *argv[])
-{
+}
+int 0;
+while (-1!=(0=getopt(argc,argv,"hD")))
+{switch(0)
+{case'D':daemonize();
+break;
+default:
+show_help();
+return-1;
+}
+}
+do_something();
+}
+
