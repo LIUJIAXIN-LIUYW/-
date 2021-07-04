@@ -135,6 +135,10 @@ this.Biggestgongyue(a,b);
     cal.setN1(28);
     cal.setN2(3);
     cal.qiumo();
+    Linux下使程序后台执行的方法有很多，这里主要列举两种。假如有一个程序是pso.cppt,通过编译后产生可执行文件pso,要使pso在Linux服务器后台执行。当客户端关机后重新登入服务器后继续查看
+    本来在终端输出的运行结果。
+    
+  
     
     
     
