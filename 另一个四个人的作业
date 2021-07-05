@@ -101,3 +101,24 @@ if(count==2){//第二条为密码
          recieve = user.getName()+":"+recieve+"\n";
          ServerUI.area_recive.append(recieve);//将接收的消息加入到消息显示框中
                          }
+（4）、User.java
+这是一个用户类，这个类比较简单，主要是将用户的信息打包，包含用户名、密码、登录地址等一些信息。在这个方法中还定义了一个判断用户是否合法的static类型的方法，该方法用于客户端登陆时，对客户端发来的用户名
+和密码进行验证，只有用户名和密码都正确才能进行聊天。
+     // 判断用户名是否合法
+     public static boolean checkUser(User u) {
+              if (Server.userDB.containsKey(u.getName()))  {  //用户数据库中包含该用户名的用户
+                    if (!Server.userDB.get(u.getName().isOnline() {  //该用户名没有被登录
+                                System.out.println("该用户名还没有上线”）；
+                                if  (u.getPass()
+                                                          .equals(Server.userDB.get(u.getName()).getPass())) //密码正确
+                                                 return true
+                                }
+                        }
+                        return false
+               }
+   到此，整个服务器端设计的类结构已经分析完了。
+   三、总结
+   在这个简单的服务器的设计中，我们用了大约十天的时间，从最开始的一行代码一步步走到了现在的几百行代码；从最开始只能写出始极简单的服务器，到现在的功能还算全面的服务器；在这个过程中也是付出了一定的时间和
+   精力，也遇到了一些困难和疑惑，幸运的是，在我们的身边聚集了一群热情、勇于探索的盟友，是他们帮我们走出困境。
+               
+                                                          
