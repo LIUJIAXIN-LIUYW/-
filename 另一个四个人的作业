@@ -62,6 +62,42 @@ public void run(){
     while (true){
     try{
       Socket client=server.accect();
-      System.out.prin
-        
-
+      System.out.prin   
+（3）、ServerThread.java
+这类主要使用来处理客户机的连接，包括收发消息，因此这个类的一个对象就相当于一个客户机。在这个类中，收发消息的方法也存在延迟，就好像系统会一直停在那，直到客户机发来消息。同样将这个方法
+放于一个线程中，置于死循环转态。
+发送消息主要用到输出流的write()方法
+//服务器发送消息的方法
+       pulic void sendMessage(String mesg){
+             mesg  +-"\r";
+             System.out.println(服务器要发送的消息是："+ mesg)；
+             byte[]data=mesg.getBytes();//获取要发送字符串的字节数组
+             try{
+                   ous.write（data);//发送字节数组
+             }catch(IOException e）{
+                   e.printStackTrace();
+             }
+       }
+接收消息用到readLine()方法
+br=new BufferredReader(new InputStreamReader(ins));
+String recieve=br.readLine();//获得收到的消息
+若要进行账号和密码的判断，就可以在这个方法中进行，在这个程序中，我预先存入了10个用户，暂时只能用这10个用户名和密码登录。在这里可以先设置一个整型的计数器count（全局变量）
+用它来记录服务器收到的消息的条数。因为使用的是readLine()方法接收消息，因此服务器相当于每次接受的是一条消息，没接受到一条消息count自动加1，利用消息发来的序号来判断该消息是用户名还是密码或是聊天消息。)
+if(count==1){//第一条为用户名
+      user.setName(recieve);
+      System.out.println(客户机输入的用户名是；"+recieve);
+}
+if(count==2){//第二条为密码
+       user.setPass(recieve);
+       System.out.println("客户机输入的密码是："+recieve);
+       if(!User.checkUser(user)){
+               closeClient();
+               return;
+       }
+       Server.userDB.get(user.getName()).setOline(true);//设置标志为true，表示该用户已上线，禁止其他人再次使用该用户登录
+       ServerUI.area_recive.append(user.getName()+"上线\n");
+ }
+ if (count＞＝3）{//第二条以后的是聊天信息，显示在聊天板上
+         recieve = user.getName()+":"+recieve+"\n";
+         ServerUI.area_recive.append(recieve);//将接收的消息加入到消息显示框中
+                         }
