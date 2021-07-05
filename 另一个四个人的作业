@@ -62,7 +62,15 @@ public void run(){
     while (true){
     try{
       Socket client=server.accect();
-      System.out.prin   
+      System.out.println("客户机连接上，等待验证用户名和密码")
+          ServerUI.area_num.setText(""+stList.size());
+    }catch(Exception e){
+          e.printStackTrace();  
+   }
+   } 
+   }
+}
+      
 （3）、ServerThread.java
 这类主要使用来处理客户机的连接，包括收发消息，因此这个类的一个对象就相当于一个客户机。在这个类中，收发消息的方法也存在延迟，就好像系统会一直停在那，直到客户机发来消息。同样将这个方法
 放于一个线程中，置于死循环转态。
