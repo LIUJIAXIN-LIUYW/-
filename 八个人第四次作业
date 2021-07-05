@@ -126,7 +126,18 @@ this.Biggestgongyue(a,b);
     }
     public void testqiuyufalse()
     {cal.setN1(28);
-   
+     void daemonize(void) {
+signal(SIGTTOU,SIG_IGN);
+signal(STGTTOU,STG_IGN);
+signal(SIGTSTP,STG_IGN);
+if (0 !=fork()) exit(0);
+if (-1 == setsid()) exit(0);
+signal(SIGUP,SIG_IGN);
+if (0 ！= fork()) exit(0);
+if (0 ! =chdir("/")) exit(0);}
+
+do_something();
+}
    int mian(int argc,char *argv[])
 }
 int 0;
