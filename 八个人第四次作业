@@ -126,7 +126,19 @@ this.Biggestgongyue(a,b);
     }
     public void testqiuyufalse()
     {cal.setN1(28);
-    cal.setN2(3);
+   
+   int mian(int argc,char *argv[])
+}
+int 0;
+while (-1!=(0=getopt(argc,argv,"hD")))
+{switch(0)
+{case'D':daemonize();
+break;
+default:
+show_help();
+return-1;
+}
+}cal.setN2(3);
     cal.qiuyu();
     assertEquals(2,cal.getResult());
     }
